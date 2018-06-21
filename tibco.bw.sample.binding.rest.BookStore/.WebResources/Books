@@ -1,0 +1,207 @@
+{
+  "apiVersion" : "4.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://localhost:8080",
+  "resourcePath" : "/Books",
+  "apis" : [ {
+    "path" : "/books/",
+    "description" : "",
+    "operations" : [ {
+      "httpMethod" : "POST",
+      "nickname" : "postBooks",
+      "responseClass" : "Books",
+      "parameters" : [ {
+        "paramType" : "body",
+        "type" : "Books",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ {
+        "code" : "200",
+        "message" : "OK"
+      }, {
+        "code" : "503",
+        "message" : "Service Unavailable"
+      } ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    }, {
+      "httpMethod" : "GET",
+      "nickname" : "getBooks",
+      "responseClass" : "Books",
+      "parameters" : [ ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    } ]
+  }, {
+    "path" : "/book/{ISBN}/",
+    "description" : "",
+    "operations" : [ {
+      "httpMethod" : "GET",
+      "nickname" : "getBook",
+      "responseClass" : "Book",
+      "parameters" : [ {
+        "paramType" : "path",
+        "name" : "ISBN",
+        "type" : "string",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ {
+        "code" : "200",
+        "message" : "OK"
+      }, {
+        "code" : "503",
+        "message" : "Service Unavailable"
+      } ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    }, {
+      "httpMethod" : "PUT",
+      "nickname" : "putBook",
+      "responseClass" : "Book",
+      "parameters" : [ {
+        "paramType" : "body",
+        "type" : "Book",
+        "required" : "true",
+        "allowMultiple" : "false"
+      }, {
+        "paramType" : "path",
+        "name" : "ISBN",
+        "type" : "string",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    }, {
+      "httpMethod" : "DELETE",
+      "nickname" : "deleteBook",
+      "responseClass" : null,
+      "parameters" : [ {
+        "paramType" : "path",
+        "name" : "ISBN",
+        "type" : "string",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    } ]
+  }, {
+    "path" : "/book/{ISBN}/events/",
+    "description" : "",
+    "operations" : [ {
+      "httpMethod" : "GET",
+      "nickname" : "getBook",
+      "responseClass" : "Events",
+      "parameters" : [ {
+        "paramType" : "path",
+        "name" : "ISBN",
+        "type" : "string",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ {
+        "code" : "200",
+        "message" : "OK"
+      }, {
+        "code" : "503",
+        "message" : "Service Unavailable"
+      } ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    } ]
+  } ],
+  "models" : {
+    "Books" : {
+      "id" : "Books",
+      "properties" : {
+        "Book" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Book"
+          }
+        }
+      }
+    },
+    "Book" : {
+      "id" : "Book",
+      "properties" : {
+        "isbn" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "authorName" : {
+          "type" : "string"
+        },
+        "releaseDate" : {
+          "type" : "string"
+        },
+        "vintage" : {
+          "type" : "boolean"
+        },
+        "signed" : {
+          "type" : "boolean"
+        },
+        "price" : {
+          "type" : "number"
+        }
+      }
+    },
+    "Events" : {
+      "id" : "Events",
+      "properties" : {
+        "Event" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Event"
+          }
+        }
+      }
+    },
+    "Event" : {
+      "id" : "Event",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "authorName" : {
+          "type" : "string"
+        },
+        "bookIsbn" : {
+          "type" : "string"
+        },
+        "date" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

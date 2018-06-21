@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_uSyuwU07EeSgU7p4E9ti_Q" name="tibco.bw.sample.binding.rest.bookstore.HttpClientResource" type="http:HttpClientConfiguration">
+  <jndi:configuration xsi:type="http:HttpClientConfiguration" xmi:id="_uTNlgE07EeSgU7p4E9ti_Q" maxTotalConnections="200" maxTotalConnectionsPerHost="20" httpClientVersion="httpcomponents" retryCount="3">
+    <tcpDetails xmi:id="_uTQo0E07EeSgU7p4E9ti_Q" connectionTimeout="3000">
+      <substitutionBindings xmi:id="_zhkgwE07EeSgU7p4E9ti_Q" template="host" propName="BW.HOST.NAME"/>
+      <substitutionBindings xmi:id="_0MshYE07EeSgU7p4E9ti_Q" template="port" propName="PORT"/>
+    </tcpDetails>
+  </jndi:configuration>
+</jndi:namedResource>

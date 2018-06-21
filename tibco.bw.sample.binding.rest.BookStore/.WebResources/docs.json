@@ -1,0 +1,12 @@
+{
+  "apiVersion" : "4.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://localhost:7777/tibco.bw.sample.binding.rest.BookStore",
+  "apis" : [ {
+    "path" : "/Books",
+    "description" : null
+  }, {
+    "path" : "/Events",
+    "description" : null
+  } ]
+}

@@ -1,0 +1,141 @@
+{
+  "apiVersion" : "4.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://localhost:8080",
+  "resourcePath" : "/Events",
+  "apis" : [ {
+    "path" : "/events/",
+    "description" : "",
+    "operations" : [ {
+      "httpMethod" : "POST",
+      "nickname" : "postEvents",
+      "responseClass" : "Events",
+      "parameters" : [ {
+        "paramType" : "body",
+        "type" : "Events",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ {
+        "code" : "200",
+        "message" : "OK"
+      }, {
+        "code" : "503",
+        "message" : "Service Unavailable"
+      } ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    }, {
+      "httpMethod" : "GET",
+      "nickname" : "getEvents",
+      "responseClass" : "Events",
+      "parameters" : [ ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    } ]
+  }, {
+    "path" : "/event/{EventID}/",
+    "description" : "",
+    "operations" : [ {
+      "httpMethod" : "GET",
+      "nickname" : "getEvent",
+      "responseClass" : "Event",
+      "parameters" : [ {
+        "paramType" : "path",
+        "name" : "EventID",
+        "type" : "string",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ {
+        "code" : "200",
+        "message" : "OK"
+      }, {
+        "code" : "503",
+        "message" : "Service Unavailable"
+      } ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    }, {
+      "httpMethod" : "PUT",
+      "nickname" : "putEvent",
+      "responseClass" : "Event",
+      "parameters" : [ {
+        "paramType" : "body",
+        "type" : "Event",
+        "required" : "true",
+        "allowMultiple" : "false"
+      }, {
+        "paramType" : "path",
+        "name" : "EventID",
+        "type" : "string",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    }, {
+      "httpMethod" : "DELETE",
+      "nickname" : "deleteEvent",
+      "responseClass" : null,
+      "parameters" : [ {
+        "paramType" : "path",
+        "name" : "EventID",
+        "type" : "string",
+        "required" : "true",
+        "allowMultiple" : "false"
+      } ],
+      "summary" : null,
+      "notes" : null,
+      "responseMessages" : [ ],
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ]
+    } ]
+  } ],
+  "models" : {
+    "Events" : {
+      "id" : "Events",
+      "properties" : {
+        "Event" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Event"
+          }
+        }
+      }
+    },
+    "Event" : {
+      "id" : "Event",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "authorName" : {
+          "type" : "string"
+        },
+        "bookIsbn" : {
+          "type" : "string"
+        },
+        "date" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
